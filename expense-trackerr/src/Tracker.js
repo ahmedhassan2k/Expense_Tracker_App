@@ -14,6 +14,9 @@ export const Tracker = () => {
             amount: Number(newAmount),
             desc: newDesc
         })
+        e.target.reset();
+        setNewAmount(0)
+        setNewDesc('')
     }
     const getIncome = () => {
         let income = 0;
@@ -49,7 +52,7 @@ export const Tracker = () => {
                 {transactions.map((transaction, index) => {
                     return (
                         <li key={index}>
-                            {/* <button onClick={() => deleteTransaction(transaction.id)} className="delete-btn">x</button> */}
+                            <button onClick={() => deleteTransaction(transaction.id)} className="delete-btn">x</button>
                             <span>{transaction.desc}</span>
                             <span>${transaction.amount}</span>
                         </li>
